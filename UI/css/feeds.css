@@ -1,0 +1,351 @@
+*{
+	box-sizing: border-box;
+	margin: 0;
+	text-decoration: none;
+}
+body{
+	font-family: "Quattrocento sans", sans-serif;
+	font-size: 17px;
+	line-height: 19px;
+	color: #111;
+	word-spacing: 2px;
+	background-color: lavender;
+}
+#header{
+	width: 100%;
+	float: left;
+	background: ghostwhite;
+	position: fixed;
+  overflow: hidden;
+  opacity: 0.9;
+}
+.leftNav{
+	width: 100%;
+	float: left;
+	margin: 0px 30px 0px 20px;
+	padding: 0px;
+}
+.leftNav a{
+	padding: 10px 20px;
+	margin: 10px 40px 10px 0;
+	display: inline-block;
+	box-sizing: border-box;
+	color: black;
+}
+.leftNav a:hover{
+	color: lightsteelblue;
+}
+.leftNav #log{
+	float: right;
+}
+#adminlog{
+  float: right;
+}
+#main{
+	width: 100%;
+	float: left;
+	margin-top: 60px;
+}
+.leftpane{
+	width: 20%;
+	float: left;
+	background: white;
+	margin: 10px 10px 10px 20px;
+	position: fixed;
+	overflow-x: hidden;
+	border-radius: 5px;
+	box-shadow: 4px 4px rgba(0, 0, 0, 0.09);
+}
+.leftpane a{
+	display: block;
+	padding: 20px;
+	color: black;
+}
+.leftpane a:hover{
+	background-color: lightsteelblue;
+	color: white;
+	transition: 0.5s ease-out;
+}
+.leftpane div{
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+  margin: -5px 20px 0 0;
+  text-align: center;
+  color: white;
+  float: right;
+  border-radius: 60%;
+}
+.allstats{
+  background-color: lightskyblue;
+}
+.resolvedstats{
+  background-color: darkolivegreen;
+}
+.draftstats{
+  background-color: royalblue;
+}
+.rejectedstats{
+  background-color: darkred
+}
+.wrap-card{
+  width: 60%;
+	float: left;
+	margin: 0px;
+  margin-left: 300px;
+}
+.brand{
+  width: 28%;
+  height: 100px;
+  float: left;
+  background-color: white;
+  margin: 12px 20px 12px 0;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 4px 4px rgba(0, 0, 0, 0.09);
+}
+.brand:hover{
+  background-color: honeydew;
+}
+.card-1 p{
+  width: 40px;
+  height: 40px;
+  background-color: darkolivegreen;
+  text-align: center;
+  padding: 10px;
+  margin: 10px;
+  color: white;
+}
+.card-2 p{
+  width: 40px;
+  height: 40px;
+  background-color: royalblue;
+  text-align: center;
+  padding: 10px;
+  margin: 10px;
+  color: white;
+}
+.card-3 p{
+  width: 40px;
+  height: 40px;
+  background-color: darkred;
+  text-align: center;
+  padding: 10px;
+  margin: 10px;
+  color: white;
+}
+.activities{
+  width: 54%;
+	float: left;
+	margin: 10px;
+  margin-left: 300px;
+}
+.container{
+	width: 100%;
+	float: left;
+	margin-bottom: 5px;
+	background-color: white;
+	border-radius: 5px;
+	box-shadow: 4px 4px rgba(0, 0, 0, 0.09);
+}
+.container h1{
+	width: 100%;
+	float: left;
+	border-bottom: 3px solid lightsteelblue;
+	padding: 10px;
+	font-size: 18px;
+  color: royalblue;
+  text-align: center;
+}
+.content{
+	padding: 20px;
+	width: 100%;
+	float: left;
+	margin: 1px 0;
+}
+.content-option{
+  width: 70px;
+  height: 30px;
+  font-size: 18px;
+  background-color: royalblue;
+  padding: 5px;
+  float: right;
+  margin: 30px 10px 0 0;
+  text-align: center;
+  border-radius: 2px;
+  cursor: pointer;
+}
+.content-option:hover{
+  background-color: lightsteelblue;
+}
+.subcontent{
+	color: black;
+	padding: 5px 0 25px 7px;
+}
+.subcontent p{
+  color: royalblue;
+  margin: 10px 0 0 0;
+}
+.content .category{
+  width: 120px;
+  height: 40px;
+  text-align: center;
+  background-color: crimson;
+  float: right;
+  padding: 10px;
+  cursor: pointer;
+}
+.content .category:hover{
+  background-color: white;
+  color: crimson;
+}
+.content .category2{
+  width: 120px;
+  height: 40px;
+  text-align: center;
+  background-color: burlywood;
+  float: right;
+  padding: 10px;
+  cursor: pointer;
+}
+.content .category2:hover{
+  background-color: white;
+  color: burlywood;
+}
+.record{
+	width: 100%;
+	float: left;
+	margin: 10px 0 0 8px;
+}
+.record p{
+  margin: 5px;
+}
+.record h4{
+	float: right;
+	background-color: lightsteelblue;
+	padding: 7px 10px;
+	margin: 2px 15px 8px 0;
+	color: black;
+}
+.record h4:hover{
+	background-color: silver;
+}
+.record img{
+  width: 200px;
+  height: 150px;
+  float: left;
+  margin: -10px 12px 12px 0px;
+}
+.footer{
+  position: fixed;
+  bottom: 0px;
+  overflow: hide;
+  width: 100%;
+  height: 30px;
+  background-color: ghostwhite;
+  opacity: 0.9;
+}
+
+/*Styling for the Modal box*/
+.modal{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	padding: 100px;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: black;
+	background-color: rgb(0,0,0,0.5);
+} 
+.modalContent{
+	background-color: white;
+	margin: auto;
+	padding: 20px 20px 50px 20px;
+	border: 1px solid grey;
+	width: 50%;
+	border-radius: 5px;
+}
+#close{
+	color: grey;
+	float: right;
+	font-size: 20px;
+	font-weight: bold;
+	cursor: pointer;
+}
+#close:hover, #close:focus {
+    color: black;
+    text-decoration: none;
+
+}
+.modalpost h1{
+	text-align: center;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+.modalpost h2{
+	text-align: left;
+	font-size: 15px;
+	margin: 0px 10px;
+}
+.modalpost textarea{
+	width: 90%;
+	float: left;
+	margin: 10px;
+	border: 1px solid grey;
+	border-radius: 3px;
+	font-size: 18px;
+}
+.cat, .geo{
+  margin: 0px 10px;
+  font: bold;
+}
+#latitude, #longitude{
+  width: 40%;
+  margin: 10px 0 10px 10px;
+  font-size: 15px;
+}
+select{
+  width: 40%;
+  margin: 10px 0 10px 10px;
+  font-size: 15px;
+}
+.status{
+  width: 30%;
+  margin: 30px 0 10px 0px;
+  font-size: 15px;
+}
+.modalpost button{
+	padding: 7px 20px;
+	margin: 2px 15px 8px 10px;
+	display: inline-block;
+	border: none;
+	background-color: royalblue;
+	box-sizing: border-box;	
+	cursor: pointer;
+	color: white;
+	font-size: 18px;
+	right: 50px;
+}
+button{
+	border-radius: 3px;
+	box-shadow: 4px 4px rgba(0, 0, 0, 0.09);
+}
+.record .change{
+  background-color: royalblue;
+  color: white;
+  font-size: 15px;
+  margin: 10px 0;
+  cursor: pointer;
+  padding: 5px;
+  float: left;
+  width: 120px;
+  text-align: center;
+}
+.record .change:hover{
+  background-color: lavender;
+  color: black;
+}
