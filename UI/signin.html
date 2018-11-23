@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../UI/css/style.css">
+  <title>Sign-In</title>
+</head>
+<body>
+  <h2>iReporter</h2>
+  <form method="POST">
+      <div class="container">
+        <h2>Sign in</h2>
+        <div class="groupfields">
+          <label>Email</label>
+          <input type="email" name="email" placeholder="Enter Email" id="emailId" class="input">
+          <div class="error" id="emailerror"></div>
+        </div>
+  
+        <div class="groupfields">
+          <label>Password</label>
+          <input type="password" name="password" placeholder="At least 6 characters" id="mypassword" class="input">
+          <input type="checkbox" name="check" id="check"> Show Password
+          <div class="error" id="passworderror"></div>
+        </div>
+  
+        <div class="cta">
+          <input type="button" name="submit" id="submit" value="Continue">
+        </div>
+      </div>
+  
+      <div class="bottom">
+        <span>New to iReporter?</span>
+        <a href="signUp.html"><input type="button" name="submit" id="submit" value="Create account"></a>
+      </div>
+  </form>
+</body>
+<script src="./js/signin.js"></script>
+</html>

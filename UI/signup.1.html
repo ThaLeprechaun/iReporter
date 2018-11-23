@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../UI/css/style.css">
+  <title>Sign-Up</title>
+</head>
+<body>
+  <h2>iReporter</h2>
+  <div class="container">
+    <form method="POST">
+        <div class="container">
+          <h2>Sign Up</h2>
+          <div class="groupfields">
+            <label>Username</label>
+            <input type="text" name="username" placeholder="Enter Username" id="username" class="input">
+            <div class="error" id="usererror"></div>
+          </div>
+    
+          <div class="groupfields">
+            <label>Email</label>
+            <input type="email" name="email" placeholder="Enter Email" id="emailId" class="input">
+            <div class="error" id="emailerror"></div>
+          </div>
+    
+          <div class="groupfields">
+            <label>Password</label>
+            <input type="password" name="password" placeholder="At least 6 characters" id="mypassword" class="input">
+            <input type="checkbox" name="check" id="check"> Show Password
+            <div class="error" id="passworderror"></div>
+          </div>
+    
+          <div class="cta">
+            <input type="button" name="submit" id="submit" value="Sign Up">
+            <span>By clicking "Sign Up", you agree that you have read the <a href="#">terms of service</a> and <a href="#">privacy policy</a></span>
+          </div>
+        </div>
+    
+        <div class="bottom">
+          <span>Already have an account?<a href="signIn.html"> Sign In</a></span>
+        </div>
+      </form>
+  </div>
+</body>
+<script src="./js/signup.js"></script>
+</html>
