@@ -1,5 +1,6 @@
+/* eslint-disable eqeqeq */
 const signUp = document.getElementById("submit");
-signUp.addEventListener("click", ()=>{
+signUp.addEventListener("click", () => {
   const username = document.getElementById("username").value;
   const email = document.getElementById("emailId").value;
   const password = document.getElementById("mypassword").value;
@@ -40,7 +41,7 @@ signUp.addEventListener("click", ()=>{
 });
 // Show Password
 const checkbox = document.getElementById("check");
-checkbox.addEventListener("click", ()=>{
+checkbox.addEventListener("click", () => {
   const checkPassword = document.getElementById("mypassword");
   if (checkPassword.type === "password") {
     checkPassword.type = "text";
