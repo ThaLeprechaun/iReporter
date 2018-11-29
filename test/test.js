@@ -26,4 +26,24 @@ describe("Red-Flag API Tests", () => {
         .expect(200, done);
     })
   });
+  describe("/POST a red-flag record", () => {
+    it("should post a new red-flag record", (done) => {
+      request(app)
+        .post("/api/v1/incident")
+        .send({
+          id: 4,
+          createdOn: "25/11/2018",
+          createdBy: 2,
+          type: "red-flag",
+          location: "64",
+          status: "draft",
+          Images: [],
+          Videos: [],
+          comment: "blah blah blah"
+        })
+        .set("Accept", "application/json")
+        .expect("Content-Type", /json/)
+        .expect(200, done);
+    })
+  })
 });
