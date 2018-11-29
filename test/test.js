@@ -45,5 +45,14 @@ describe("Red-Flag API Tests", () => {
         .expect("Content-Type", /json/)
         .expect(200, done);
     })
-  })
+  });
+  describe("/DELETE a red-flag record", () => {
+    it("should delete a red-flag record", (done) => {
+      request(app)
+        .delete("/api/v1/incident/2")
+        .set("Accept", "application/json")
+        .expect("Content-Type", /json/)
+        .expect(200, done);
+    })
+  });
 });
