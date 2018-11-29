@@ -25,6 +25,9 @@ module.exports = (req, res) => {
   incident.push(newRecord);
   return res.status(200).send({
     status: 200,
-    newRecord
-  })
+    data: [{
+      id: newId,
+      message: "Created red-flag record"
+    }]
+  });
 }
