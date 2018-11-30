@@ -55,4 +55,44 @@ describe("Red-Flag API Tests", () => {
         .expect(200, done);
     })
   });
+  describe("/UPDATE the location of a red-flag record", () => {
+    it("should update the location of a red-flag record", (done) => {
+      request(app)
+        .patch("/api/v1/redflags/1/location")
+        .send({
+          id: 1,
+          createdOn: "25/11/2018",
+          createdBy: 2,
+          type: "red-flag",
+          location: "64",
+          status: "draft",
+          Images: [],
+          Videos: [],
+          comment: "blah blah blah"
+        })
+        .set("Accept", "application/json")
+        .expect("Content-Type", /json/)
+        .expect(200, done);
+    })
+  });
+  describe("/UPDATE the comment of a red-flag record", () => {
+    it("should update the comment of a red-flag record", (done) => {
+      request(app)
+        .patch("/api/v1/redflags/1/comment")
+        .send({
+          id: 1,
+          createdOn: "25/11/2018",
+          createdBy: 2,
+          type: "red-flag",
+          location: "64",
+          status: "draft",
+          Images: [],
+          Videos: [],
+          comment: "blah black sheep"
+        })
+        .set("Accept", "application/json")
+        .expect("Content-Type", /json/)
+        .expect(200, done);
+    })
+  });
 });
