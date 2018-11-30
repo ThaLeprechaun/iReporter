@@ -6,7 +6,7 @@
   "scripts": {
     "test": "nyc --reporter=html --reporter=text mocha && npm run eslint",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
-    "start": "nodemon",
+    "start": "nodemon index.js",
     "eslint": "eslint ."
   },
   "repository": {
@@ -39,5 +39,8 @@
     "should": "^13.2.3",
     "should-http": "^0.1.1",
     "supertest": "^3.3.0"
+  },
+  "engines": {
+    "node": "v8.11.3"
   }
 }
