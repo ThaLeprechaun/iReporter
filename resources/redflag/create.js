@@ -7,9 +7,10 @@ module.exports = (req, res) => {
       error: "Type is required"
     });
   }
-  const incident = data.incident;
-  const newId = incident.length + 1;
+  const redflag = data.redflag;
+  const newId = redflag.length + 1;
   const day = new Date();
+
   const newRecord = {
     id: newId,
     createdOn: day,
@@ -22,7 +23,7 @@ module.exports = (req, res) => {
     comment: req.body.comment
   }
 
-  incident.push(newRecord);
+  redflag.push(newRecord);
   return res.status(200).send({
     status: 200,
     data: [{

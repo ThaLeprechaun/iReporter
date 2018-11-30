@@ -1,9 +1,9 @@
 const data = require("../../data.json");
 
 module.exports = (req, res) => {
-  const incidentId = req.params.incidentId * 1;
-  const incident = data.incident.find(e => e.id === incidentId);
-  if (!incident) {
+  const redflagId = req.params.redflagId * 1;
+  const findRedflag = data.redflag.find(e => e.id === redflagId);
+  if (!findRedflag) {
     return res.status(404).send({
       status: 404,
       error: "Record was not found"
@@ -11,6 +11,6 @@ module.exports = (req, res) => {
   }
   res.status(200).json({
     status: 200,
-    incident
+    findRedflag
   });
 }

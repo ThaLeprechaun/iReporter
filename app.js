@@ -4,5 +4,5 @@ const routes = require("./routes");
 
 const app = express();
 // app.use("/api/v1/user", routes.user);
-app.use("/api/v1/incident", routes.incident);
+app.use("/api/v1/redflags", routes.redflag);
 module.exports = app;

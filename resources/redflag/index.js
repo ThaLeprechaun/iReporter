@@ -4,8 +4,8 @@ const router = express.Router();
 router.use(express.json());
 
 router.get("/", require("./all"));
-router.get("/:incidentId", require("./single"));
+router.get("/:redflagId", require("./single"));
 router.post("/", require("./create"));
-router.delete("/:incidentId", require("./delete"));
+router.delete("/:redflagId", require("./delete"));
 
 module.exports = router;

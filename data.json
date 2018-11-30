@@ -34,7 +34,7 @@
       "isAdmin" : 1
     }
   ],
-  "incident": [
+  "redflag": [
     {
       "id": 1,
       "createdOn": "25/11/2018",
