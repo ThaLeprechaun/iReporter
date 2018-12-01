@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "nyc mocha && npm run eslint",
-    "coverage": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
+    "coverage": "nyc --reporter=lcov npm test && nyc report --reporter=text-lcov | coveralls",
     "start": "nodemon",
     "eslint": "eslint ."
   },
