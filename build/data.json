@@ -1,0 +1,72 @@
+{
+  "user": [
+    {
+      "id": 1,
+      "firstname": "John" ,
+      "lastname": "Doe",
+      "othernames": "" ,
+      "email": "jdoe@yahoo.com" ,
+      "phoneNumber": "08012345678",
+      "username": "jdoe",
+      "registered":  "25/11/2018",
+      "isAdmin" : 0
+    },
+    {
+      "id": 2,
+      "firstname": "Jane" ,
+      "lastname": "Doe",
+      "othernames": "Jany" ,
+      "email": "janedoe@yahoo.com" ,
+      "phoneNumber": "08012345679",
+      "username": "jane",
+      "registered":  "24/11/2018",
+      "isAdmin" : 0
+    },
+    {
+      "id": 3,
+      "firstname": "Jaden" ,
+      "lastname": "Smith",
+      "othernames": "Icon" ,
+      "email": "jsmith@yahoo.com" ,
+      "phoneNumber": "08012345677",
+      "username": "jsmith",
+      "registered":  "23/11/2018",
+      "isAdmin" : 1
+    }
+  ],
+  "redflag": [
+    {
+      "id": 1,
+      "createdOn": "25/11/2018",
+      "createdBy": 1,
+      "type": ["red-flag"],
+      "location": "",
+      "status": ["resolved"],
+      "Images": [],
+      "Videos": [],
+      "comment": "blah blah blah"
+    },
+    {
+      "id": 2,
+      "createdOn": "25/11/2018",
+      "createdBy": 2,
+      "type": ["Intervention"],
+      "location": "",
+      "status": ["rejected"],
+      "Images": [],
+      "Videos": [],
+      "comment": "blah blah blah"
+    },
+    {
+      "id": 3,
+      "createdOn": "25/11/2018",
+      "createdBy": 2,
+      "type": ["red-flag"],
+      "location": "",
+      "status": ["draft"],
+      "Images": [],
+      "Videos": [],
+      "comment": "blah blah blah"
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 /* eslint-disable class-methods-use-this */
-const data = require("../../data.json");
+import data from "../../data.json";
 
 class RedflagController {
   getAllRedflags(req, res) {
@@ -162,4 +162,4 @@ class RedflagController {
 }
 
 const redflag = new RedflagController();
-module.exports = redflag;
+export default redflag;
