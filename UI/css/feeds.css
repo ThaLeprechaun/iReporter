@@ -16,8 +16,32 @@ body{
 	float: left;
 	background: ghostwhite;
 	position: fixed;
-  overflow: hidden;
   opacity: 0.9;
+}
+.holdDropdown{
+  position: relative;
+  display: inline-block;
+  float: right;
+}
+.logdrop{
+  cursor: pointer;
+  padding: 16px;
+  font-size: 16px;
+}
+.dropdown{
+  position: absolute;
+  background: white;
+  width: 100%;
+  right: 50px;
+  box-shadow: 4px 4px rgba(0, 0, 0, 0.09);
+  display: none;
+  border-radius: 5px;
+}
+.holdDropdown:hover .dropdown{
+  display: block;
+}
+.holdDropdown:hover .adminlog{
+  padding: 15px;
 }
 .leftNav{
 	width: 100%;
@@ -37,9 +61,6 @@ body{
 }
 .leftNav #log{
 	float: right;
-}
-#adminlog{
-  float: right;
 }
 #main{
 	width: 100%;
@@ -252,14 +273,19 @@ body{
   bottom: 0px;
   overflow: hide;
   width: 100%;
-  height: 50px;
+  height: 30px;
   background-color: ghostwhite;
-  
   text-align: center;
   padding: 7px;
-  font-size: 14px;
 }
-
+.footer a{
+  color: black;
+  font-size: 14px;
+  word-spacing: 5px;
+}
+.footer a:hover{
+  color: blue;
+}
 /*Styling for the Modal box*/
 .modal{
 	display: none;

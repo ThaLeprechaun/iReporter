@@ -4,9 +4,10 @@
   "description": "A platform",
   "main": "index.js",
   "scripts": {
-    "test": "nyc mocha && npm run eslint",
+    "test": "nyc --reporter=text _mocha --timeout 10000 --exit",
+    "build": "rm -rf build && babel app.js --out-dir build && babel server --out-dir build/server && babel test --out-dir build/test && cp -r data.json build",
     "coverage": "nyc --reporter=lcov npm test && nyc report --reporter=text-lcov | coveralls",
-    "start": "nodemon",
+    "start": "npm run build && nodemon build/app.js",
     "eslint": "eslint ."
   },
   "repository": {
@@ -20,11 +21,16 @@
   },
   "homepage": "https://github.com/ThaLeprechaun/iReporter#readme",
   "dependencies": {
+    "body-parser": "^1.18.3",
     "express": "^4.16.4"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.5",
+    "@babel/core": "^7.2.0",
+    "@babel/node": "^7.2.0",
     "@babel/preset-env": "^7.1.6",
+    "@babel/register": "^7.0.0",
+    "babel-polyfill": "^6.26.0",
     "chai": "^4.2.0",
     "chai-http": "^4.2.0",
     "coveralls": "^3.0.2",
