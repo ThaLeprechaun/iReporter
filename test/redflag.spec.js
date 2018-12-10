@@ -1,5 +1,6 @@
+/* eslint-disable import/first */
 const chai = require("chai");
-const app = require("../app");
+const app = require("../build/app").default;
 const request = require("supertest");
 
 const expect = chai.expect;

@@ -1,5 +1,5 @@
 /* eslint-disable class-methods-use-this */
-const data = require("../../data.json");
+import data from "../../data.json";
 
 class RedflagController {
   getAllRedflags(req, res) {
@@ -13,6 +13,12 @@ class RedflagController {
   getSingleRedflag(req, res) {
     const redflagId = req.params.redflagId * 1;
     const findRedflag = data.redflag.find(e => e.id === redflagId);
+    if (!redflagId || isNaN(redflagId)) {
+      return res.status(404).json({
+        status: 404,
+        error: "Path does not exist"
+      });
+    }
     if (!findRedflag) {
       return res.status(404).json({
         status: 404,
@@ -162,4 +168,4 @@ class RedflagController {
 }
 
 const redflag = new RedflagController();
-module.exports = redflag;
+export default redflag;
