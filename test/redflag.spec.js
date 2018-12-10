@@ -1,5 +1,6 @@
+/* eslint-disable import/first */
 const chai = require("chai");
-const app = require("../app");
+const app = require("../build/app").default;
 const request = require("supertest");
 
 const expect = chai.expect;
@@ -14,7 +15,8 @@ describe("Red-Flag API Tests", () => {
         .get("/api/v1/redflags")
         .set("Accept", "application/json")
         .expect("Content-Type", /json/)
-        .expect(200, done);
+        .expect(200)
+      done();
     })
   });
   describe("/GET a single red-flag record", () => {
@@ -23,7 +25,8 @@ describe("Red-Flag API Tests", () => {
         .get("/api/v1/redflags/1")
         .set("Accept", "application/json")
         .expect("Content-Type", /json/)
-        .expect(200, done);
+        .expect(200)
+      done();
     })
   });
   describe("/POST a red-flag record", () => {
@@ -43,7 +46,8 @@ describe("Red-Flag API Tests", () => {
         })
         .set("Accept", "application/json")
         .expect("Content-Type", /json/)
-        .expect(200, done);
+        .expect(200)
+      done();
     })
   });
   describe("/DELETE a red-flag record", () => {
@@ -52,7 +56,8 @@ describe("Red-Flag API Tests", () => {
         .delete("/api/v1/redflags/2")
         .set("Accept", "application/json")
         .expect("Content-Type", /json/)
-        .expect(200, done);
+        .expect(200)
+      done();
     })
   });
   describe("/UPDATE the location of a red-flag record", () => {
@@ -72,7 +77,8 @@ describe("Red-Flag API Tests", () => {
         })
         .set("Accept", "application/json")
         .expect("Content-Type", /json/)
-        .expect(200, done);
+        .expect(200)
+      done();
     })
   });
   describe("/UPDATE the comment of a red-flag record", () => {
@@ -92,7 +98,8 @@ describe("Red-Flag API Tests", () => {
         })
         .set("Accept", "application/json")
         .expect("Content-Type", /json/)
-        .expect(200, done);
+        .expect(200)
+      done();
     })
   });
-});
+})

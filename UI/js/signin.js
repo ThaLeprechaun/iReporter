@@ -29,7 +29,9 @@ login.addEventListener("click", () => {
     input[2].style.border = "2px solid red";
     return false;
   }
-  return true;
+  const home =  location.href
+  location.href = "home.html";
+  return home;
 });
 
 const checkbox = document.getElementById("check");

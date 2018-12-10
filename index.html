@@ -9,9 +9,13 @@
     <div id="header">
       <div class="leftNav">
         <a href="./index.html">iReporter</a>
-        <a href="./UI/admin.html" id="adminlog">Admin</a>
-        <a href="./UI/signin.html" id="log">Sign Up</a>
-        <a href="./UI/home.html" id="log">Sign In</a>
+        <div class="holdDropdown">
+          <a href="./UI/signin.html" class="logdrop">Log In</a>
+          <div class="dropdown">
+            <a href="./UI/admin.html" class="adminlog">Admin</a>
+            <a href="./UI/home.html" class="adminlog">iReporter</a>
+          </div>
+        </div>
       </div>
       </div>
     </div>
@@ -19,7 +23,6 @@
     <div id="main">
       <div class="leftpane">
         <a href="./index.html">Home</a>
-        <a href="./UI/profile.html">My Profile</a>
         <a href="#" id="newpost">Create New Record</a>
         <a href="#">Settings</a>
       </div>
@@ -110,45 +113,14 @@
           </div>
         </div>
     </div>
-    <div class="footer"><a href="#">&#169 2018 All Rights Reserved</a></div>
-
-    <!----------------Modal content for creating a new record----------------------->
-
-	<form>
-		<div id="modal" class="modal">
-			<div class="modalContent">
-				<span id="close">x</span>
-				<div class="modalpost">
-					<h1>Create A Record</h1>
-					<h2>Record Title</h2>
-					<textarea rows="2" cols="60" placeholder="Title your record" id="text"></textarea>
-					<h2>Description</h2>
-          <textarea rows="5" cols="60" placeholder="Describe your record" id="text"></textarea>
-          
-          <p id="cat" class="cat"><h2>Record Category</h2></p>
-          <select id="recordCat">
-            <option>Select</option>
-            <option value="redFlag">Red Flag</option>
-            <option value="intervention">Intervention</option>
-          </select>
-          <div id="displayOne"></div>
-
-          <p id="cat" class="cat"><h2>Add media</h2></p>
-          <select id="mediaCat">
-            <option>Select</option>
-            <option value="image">Image</option>
-            <option value="video">Video</option>
-          </select>
-          <div id="displayTwo"></div>
-          <p class="geo"><h2>Add Geolocation</h2></p>
-          <input name="Latitude" type="text" id="latitude" placeholder="Latitude"/>
-          <input name="Longitude" type="text" id="longitude" placeholder="Longitude"/>
-					<p><button type="submit">Post</button></p>
-				</div>
-			</div>
-		</div>
-	</form>
+   <div class="footer"><a href="#">&#169 2018 All Rights Reserved</a></div>
 </body>
 <script src="./UI/js/modal.js"></script>
 <script src="./UI/js/category.js"></script>
+<script type="text/javascript">
+  let create = document.getElementById("newpost");
+  create.addEventListener("click", ()=> {
+    alert("You need to login to create a post");
+  });
+</script>
 </html>
