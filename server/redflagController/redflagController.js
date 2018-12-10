@@ -13,6 +13,12 @@ class RedflagController {
   getSingleRedflag(req, res) {
     const redflagId = req.params.redflagId * 1;
     const findRedflag = data.redflag.find(e => e.id === redflagId);
+    if (!redflagId || isNaN(redflagId)) {
+      return res.status(404).json({
+        status: 404,
+        error: "Path does not exist"
+      });
+    }
     if (!findRedflag) {
       return res.status(404).json({
         status: 404,
