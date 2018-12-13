@@ -1,3 +1,4 @@
+/* eslint-disable arrow-body-style */
 import express from "express";
 import bodyParser from "body-parser";
 import redflagRecord from "./server/redflagController/redflagController";
@@ -7,7 +8,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
-	return res.status(200).json({ message: "Congratulations! iReporter is up and running"})
+  return res.status(200).json({ message: "Congratulations! iReporter is up and running" })
 });
 
 app.get("/api/v1/redflags", redflagRecord.getAllRedflags);
