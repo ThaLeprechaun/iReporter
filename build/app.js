@@ -13,6 +13,7 @@ var _redflagController = _interopRequireDefault(require("./server/redflagControl
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+/* eslint-disable arrow-body-style */
 var app = (0, _express.default)();
 app.use(_bodyParser.default.json());
 app.use(_bodyParser.default.urlencoded({
