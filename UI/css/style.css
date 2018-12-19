@@ -8,10 +8,11 @@ body{
 	font-size: 13px;
 	line-height: 19px;
 	color: #111;
-  word-spacing: 2px;
+  	word-spacing: 2px;
 }
 form{
 	width: 28%;
+	float: left;
 	border: 2px solid #f1f1f1;
 	border-radius: 3px;
 	margin: 50px 450px 90px 450px;
@@ -97,4 +98,12 @@ input[type=button] a:hover{
 }
 .bottom #submit:hover{
 	background-color: royalblue;
+}
+
+@media screen and (max-width: 620px){
+	form{
+		width: auto;
+		float: none;
+		margin: 0px;
+	}
 }

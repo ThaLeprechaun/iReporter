@@ -247,7 +247,7 @@ body{
 .record{
 	width: 100%;
 	float: left;
-	margin: 10px 0 0 8px;
+	margin: 10px 10px 10px 8px;
 }
 .record p{
   margin: 5px;
@@ -263,10 +263,17 @@ body{
 	background-color: silver;
 }
 .record img{
-  width: 200px;
-  height: 150px;
+  width: 30%;
+  height: auto;
   float: left;
   margin: -10px 12px 12px 0px;
+}
+.record .describe{
+  width: 100%;
+  margin-top: 10px;
+}
+.record p{
+  margin-top: 0px;
 }
 .footer{
   position: fixed;
@@ -392,4 +399,22 @@ button{
 .record .change:hover{
   background-color: lavender;
   color: black;
+}
+
+@media screen and (max-width: 620px){
+  .activities, .container, .content, .category, .subcontent, .record{
+    width: auto;
+    float: none;
+    margin: 5px;
+    position: all;
+  }
+  .leftpane{
+    display: none;
+  }
+  .record img{
+    width: 100%;
+    float: none;
+    height: auto;
+    margin: 0;
+  }
 }
