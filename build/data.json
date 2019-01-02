@@ -7,9 +7,9 @@
       "othernames": "" ,
       "email": "jdoe@yahoo.com" ,
       "phoneNumber": "08012345678",
-      "username": "jdoe",
+      "userName": "jdoe",
       "registered":  "25/11/2018",
-      "isAdmin" : 0
+      "isAdmin": 0
     },
     {
       "id": 2,
@@ -20,7 +20,7 @@
       "phoneNumber": "08012345679",
       "username": "jane",
       "registered":  "24/11/2018",
-      "isAdmin" : 0
+      "isAdmin": 0
     },
     {
       "id": 3,
@@ -31,7 +31,7 @@
       "phoneNumber": "08012345677",
       "username": "jsmith",
       "registered":  "23/11/2018",
-      "isAdmin" : 1
+      "isAdmin": 1
     }
   ],
   "redflag": [
@@ -50,7 +50,7 @@
       "id": 2,
       "createdOn": "25/11/2018",
       "createdBy": 2,
-      "type": ["Intervention"],
+      "type": ["red-flag"],
       "location": "",
       "status": ["rejected"],
       "Images": [],
@@ -67,6 +67,41 @@
       "Images": [],
       "Videos": [],
       "comment": "blah blah blah"
+    }
+  ],
+  "intervention": [
+   {
+      "id": 1,
+      "createdOn": "25/12/2018",
+      "createdBy": 1,
+      "type": ["Intervention"],
+      "location": "",
+      "status": ["draft"],
+      "Images": [],
+      "Videos": [],
+      "comment": "blu blu blu"
+    },
+    {
+      "id": 2,
+      "createdOn": "25/12/2018",
+      "createdBy": 1,
+      "type": ["Intervention"],
+      "location": "",
+      "status": ["resolved"],
+      "Images": [],
+      "Videos": [],
+      "comment": "blu blu blu"
+    },
+    {
+      "id": 3,
+      "createdOn": "25/12/2018",
+      "createdBy": 1,
+      "type": ["Intervention"],
+      "location": "",
+      "status": ["rejected"],
+      "Images": [],
+      "Videos": [],
+      "comment": "blu blu blu"
     }
   ]
 }

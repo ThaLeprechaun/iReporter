@@ -1,24 +1,24 @@
 /* eslint-disable no-restricted-globals */
 import data from "../../data.json";
 
-exports.getAllRedflags = (req, res) => {
-  const redflag = data.redflag;
+exports.getAllIntervention = (req, res) => {
+  const intervention = data.intervention;
   res.status(200).json({
     status: 200,
-    redflag
+    intervention
   });
 }
 
-exports.getSingleRedflag = (req, res) => {
-  const redflagId = req.params.redflagId * 1;
-  const findRedflag = data.redflag.find(e => e.id === redflagId);
-  if (isNaN(redflagId)) {
+exports.getSingleIntervention = (req, res) => {
+  const interventionId = req.params.interventionId * 1;
+  const findintervention = data.intervention.find(e => e.id === interventionId);
+  if (isNaN(interventionId)) {
     return res.status(404).json({
       status: 404,
       error: "Path does not exist"
     });
   }
-  if (!findRedflag) {
+  if (!findintervention) {
     return res.status(404).json({
       status: 404,
       error: "Record was not found"
@@ -26,19 +26,19 @@ exports.getSingleRedflag = (req, res) => {
   }
   res.status(200).json({
     status: 200,
-    findRedflag
+    findintervention
   });
 }
 
-exports.createRedflag = (req, res) => {
+exports.createIntervention = (req, res) => {
   if (!req.body.type) {
     return res.status(400).json({
       status: 400,
       error: "Type is required"
     });
   }
-  const redflag = data.redflag;
-  const newId = redflag.length + 1;
+  const intervention = data.intervention;
+  const newId = intervention.length + 1;
   const day = new Date();
 
   const newRecord = {
@@ -53,29 +53,29 @@ exports.createRedflag = (req, res) => {
     comment: req.body.comment
   }
 
-  redflag.push(newRecord);
+  intervention.push(newRecord);
   return res.status(200).json({
     status: 200,
     data: [{
       id: newId,
-      message: "Created red-flag record"
+      message: "Created Intervention record"
     }]
   });
 }
 
-exports.updateRedflagComment = (req, res) => {
-  const redflagId = req.params.redflagId * 1;
-  const redflag = data.redflag;
-  const findRedflag = redflag.find(e => e.id === redflagId);
+exports.updateInterventionComment = (req, res) => {
+  const interventionId = req.params.interventionId * 1;
+  const intervention = data.intervention;
+  const findintervention = intervention.find(e => e.id === interventionId);
 
-  if (isNaN(redflagId)) {
+  if (isNaN(interventionId)) {
     return res.status(404).json({
       status: 404,
       error: "Path does not exist"
     });
   }
 
-  if (!redflagId) {
+  if (!interventionId) {
     res.status(404).json({
       status: 404,
       error: "Record was not found"
@@ -85,13 +85,13 @@ exports.updateRedflagComment = (req, res) => {
   if (!req.body.comment) {
     return res.status(404).json({
       status: 404,
-      error: "Comment is required"
+      error: "comment is required"
     });
   }
-  const index = redflag.indexOf(findRedflag);
+  const index = intervention.indexOf(findintervention);
   const day = new Date();
-  const updatedRedflag = {
-    id: redflagId,
+  const updatedintervention = {
+    id: interventionId,
     createdOn: day,
     createdBy: req.body.createdBy,
     type: req.body.type,
@@ -102,44 +102,45 @@ exports.updateRedflagComment = (req, res) => {
     comment: req.body.comment
   }
 
-  redflag.splice(index, 1, updatedRedflag);
+  intervention.splice(index, 1, updatedintervention);
   return res.status(200).json({
     status: 200,
     data: [{
-      id: redflagId,
-      message: "Updated red-flag record's comment"
+      id: interventionId,
+      message: "Updated Intervention record's comment"
     }]
   });
 }
 
-exports.updateRedflagLocation = (req, res) => {
-  const redflagId = req.params.redflagId * 1;
-  const redflag = data.redflag;
-  const findRedflag = redflag.find(e => e.id === redflagId);
+exports.updateInterventionLocation = (req, res) => {
+  const interventionId = req.params.interventionId * 1;
+  const intervention = data.intervention;
+  const findintervention = intervention.find(e => e.id === interventionId);
 
-  if (isNaN(redflagId)) {
+  if (isNaN(interventionId)) {
     return res.status(404).json({
       status: 404,
       error: "Path does not exist"
     });
   }
 
-  if (!redflagId) {
-    return res.status(404).json({
+  if (!interventionId) {
+    res.status(404).json({
       status: 404,
       error: "Record was not found"
-    });
+    })
   }
+
   if (!req.body.location) {
     return res.status(404).json({
       status: 404,
-      error: "Location is required"
+      error: "location is required"
     });
   }
-  const index = redflag.indexOf(findRedflag);
+  const index = intervention.indexOf(findintervention);
   const day = new Date();
-  const updatedRedflag = {
-    id: redflagId,
+  const updatedintervention = {
+    id: interventionId,
     createdOn: day,
     createdBy: req.body.createdBy,
     type: req.body.type,
@@ -149,44 +150,46 @@ exports.updateRedflagLocation = (req, res) => {
     Videos: [],
     comment: req.body.comment
   }
-  redflag.splice(index, 1, updatedRedflag);
+
+  intervention.splice(index, 1, updatedintervention);
   return res.status(200).json({
     status: 200,
     data: [{
-      id: redflagId,
-      message: "Updated red-flag record's location"
+      id: interventionId,
+      message: "Updated Intervention record's location"
     }]
-  })
+  });
 }
 
-exports.updateRedflagStatus = (req, res) => {
-  const redflagId = req.params.redflagId * 1;
-  const redflag = data.redflag;
-  const findRedflag = redflag.find(e => e.id === redflagId);
+exports.updateInterventionStatus = (req, res) => {
+  const interventionId = req.params.interventionId * 1;
+  const intervention = data.intervention;
+  const findintervention = intervention.find(e => e.id === interventionId);
 
-  if (isNaN(redflagId)) {
+  if (isNaN(interventionId)) {
     return res.status(404).json({
       status: 404,
       error: "Path does not exist"
     });
   }
 
-  if (!redflagId) {
-    return res.status(404).json({
+  if (!interventionId) {
+    res.status(404).json({
       status: 404,
       error: "Record was not found"
-    });
+    })
   }
+
   if (!req.body.status) {
     return res.status(404).json({
       status: 404,
-      error: "Status is required"
+      error: "status is required"
     });
   }
-  const index = redflag.indexOf(findRedflag);
+  const index = intervention.indexOf(findintervention);
   const day = new Date();
-  const updatedRedflag = {
-    id: redflagId,
+  const updatedintervention = {
+    id: interventionId,
     createdOn: day,
     createdBy: req.body.createdBy,
     type: req.body.type,
@@ -196,42 +199,43 @@ exports.updateRedflagStatus = (req, res) => {
     Videos: [],
     comment: req.body.comment
   }
-  redflag.splice(index, 1, updatedRedflag);
+
+  intervention.splice(index, 1, updatedintervention);
   return res.status(200).json({
     status: 200,
     data: [{
-      id: redflagId,
-      message: "Updated red-flag record's status"
+      id: interventionId,
+      message: "Updated Intervention record's status"
     }]
-  })
+  });
 }
 
-exports.deleteRedflag = (req, res) => {
-  const redflagId = req.params.redflagId * 1;
-  const redflag = data.redflag;
-  const findRedflag = redflag.find(e => e.id === redflagId);
+exports.deleteIntervention = (req, res) => {
+  const interventionId = req.params.interventionId * 1;
+  const intervention = data.intervention;
+  const findintervention = intervention.find(e => e.id === interventionId);
 
-  if (isNaN(redflagId)) {
+  if (isNaN(interventionId)) {
     return res.status(404).json({
       status: 404,
       error: "Path does not exist"
     });
   }
   
-  if (!findRedflag) {
+  if (!findintervention) {
     return res.status(404).json({
       status: 404,
       error: "Record was not found"
     });
   }
-  const newId = redflagId;
-  const index = redflag.indexOf(findRedflag);
-  redflag.splice(index, 1);
+  const newId = interventionId;
+  const index = intervention.indexOf(findintervention);
+  intervention.splice(index, 1);
   res.status(200).json({
     status: 200,
     data: [{
       id: newId,
-      message: "red-flag record has been deleted"
+      message: "Intervention record has been deleted"
     }]
   })
 }
