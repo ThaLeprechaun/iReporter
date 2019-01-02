@@ -5,29 +5,29 @@ var _data = _interopRequireDefault(require("../../data.json"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /* eslint-disable no-restricted-globals */
-exports.getAllRedflags = function (req, res) {
-  var redflag = _data.default.redflag;
+exports.getAllIntervention = function (req, res) {
+  var intervention = _data.default.intervention;
   res.status(200).json({
     status: 200,
-    redflag: redflag
+    intervention: intervention
   });
 };
 
-exports.getSingleRedflag = function (req, res) {
-  var redflagId = req.params.redflagId * 1;
+exports.getSingleIntervention = function (req, res) {
+  var interventionId = req.params.interventionId * 1;
 
-  var findRedflag = _data.default.redflag.find(function (e) {
-    return e.id === redflagId;
+  var findintervention = _data.default.intervention.find(function (e) {
+    return e.id === interventionId;
   });
 
-  if (isNaN(redflagId)) {
+  if (isNaN(interventionId)) {
     return res.status(404).json({
       status: 404,
       error: "Path does not exist"
     });
   }
 
-  if (!findRedflag) {
+  if (!findintervention) {
     return res.status(404).json({
       status: 404,
       error: "Record was not found"
@@ -36,11 +36,11 @@ exports.getSingleRedflag = function (req, res) {
 
   res.status(200).json({
     status: 200,
-    findRedflag: findRedflag
+    findintervention: findintervention
   });
 };
 
-exports.createRedflag = function (req, res) {
+exports.createIntervention = function (req, res) {
   if (!req.body.type) {
     return res.status(400).json({
       status: 400,
@@ -48,8 +48,8 @@ exports.createRedflag = function (req, res) {
     });
   }
 
-  var redflag = _data.default.redflag;
-  var newId = redflag.length + 1;
+  var intervention = _data.default.intervention;
+  var newId = intervention.length + 1;
   var day = new Date();
   var newRecord = {
     id: newId,
@@ -62,31 +62,31 @@ exports.createRedflag = function (req, res) {
     Videos: [],
     comment: req.body.comment
   };
-  redflag.push(newRecord);
+  intervention.push(newRecord);
   return res.status(200).json({
     status: 200,
     data: [{
       id: newId,
-      message: "Created red-flag record"
+      message: "Created Intervention record"
     }]
   });
 };
 
-exports.updateRedflagComment = function (req, res) {
-  var redflagId = req.params.redflagId * 1;
-  var redflag = _data.default.redflag;
-  var findRedflag = redflag.find(function (e) {
-    return e.id === redflagId;
+exports.updateInterventionComment = function (req, res) {
+  var interventionId = req.params.interventionId * 1;
+  var intervention = _data.default.intervention;
+  var findintervention = intervention.find(function (e) {
+    return e.id === interventionId;
   });
 
-  if (isNaN(redflagId)) {
+  if (isNaN(interventionId)) {
     return res.status(404).json({
       status: 404,
       error: "Path does not exist"
     });
   }
 
-  if (!redflagId) {
+  if (!interventionId) {
     res.status(404).json({
       status: 404,
       error: "Record was not found"
@@ -96,14 +96,14 @@ exports.updateRedflagComment = function (req, res) {
   if (!req.body.comment) {
     return res.status(404).json({
       status: 404,
-      error: "Comment is required"
+      error: "comment is required"
     });
   }
 
-  var index = redflag.indexOf(findRedflag);
+  var index = intervention.indexOf(findintervention);
   var day = new Date();
-  var updatedRedflag = {
-    id: redflagId,
+  var updatedintervention = {
+    id: interventionId,
     createdOn: day,
     createdBy: req.body.createdBy,
     type: req.body.type,
@@ -113,32 +113,32 @@ exports.updateRedflagComment = function (req, res) {
     Videos: [],
     comment: req.body.comment
   };
-  redflag.splice(index, 1, updatedRedflag);
+  intervention.splice(index, 1, updatedintervention);
   return res.status(200).json({
     status: 200,
     data: [{
-      id: redflagId,
-      message: "Updated red-flag record's comment"
+      id: interventionId,
+      message: "Updated Intervention record's comment"
     }]
   });
 };
 
-exports.updateRedflagLocation = function (req, res) {
-  var redflagId = req.params.redflagId * 1;
-  var redflag = _data.default.redflag;
-  var findRedflag = redflag.find(function (e) {
-    return e.id === redflagId;
+exports.updateInterventionLocation = function (req, res) {
+  var interventionId = req.params.interventionId * 1;
+  var intervention = _data.default.intervention;
+  var findintervention = intervention.find(function (e) {
+    return e.id === interventionId;
   });
 
-  if (isNaN(redflagId)) {
+  if (isNaN(interventionId)) {
     return res.status(404).json({
       status: 404,
       error: "Path does not exist"
     });
   }
 
-  if (!redflagId) {
-    return res.status(404).json({
+  if (!interventionId) {
+    res.status(404).json({
       status: 404,
       error: "Record was not found"
     });
@@ -147,14 +147,14 @@ exports.updateRedflagLocation = function (req, res) {
   if (!req.body.location) {
     return res.status(404).json({
       status: 404,
-      error: "Location is required"
+      error: "location is required"
     });
   }
 
-  var index = redflag.indexOf(findRedflag);
+  var index = intervention.indexOf(findintervention);
   var day = new Date();
-  var updatedRedflag = {
-    id: redflagId,
+  var updatedintervention = {
+    id: interventionId,
     createdOn: day,
     createdBy: req.body.createdBy,
     type: req.body.type,
@@ -164,32 +164,32 @@ exports.updateRedflagLocation = function (req, res) {
     Videos: [],
     comment: req.body.comment
   };
-  redflag.splice(index, 1, updatedRedflag);
+  intervention.splice(index, 1, updatedintervention);
   return res.status(200).json({
     status: 200,
     data: [{
-      id: redflagId,
-      message: "Updated red-flag record's location"
+      id: interventionId,
+      message: "Updated Intervention record's location"
     }]
   });
 };
 
-exports.updateRedflagStatus = function (req, res) {
-  var redflagId = req.params.redflagId * 1;
-  var redflag = _data.default.redflag;
-  var findRedflag = redflag.find(function (e) {
-    return e.id === redflagId;
+exports.updateInterventionStatus = function (req, res) {
+  var interventionId = req.params.interventionId * 1;
+  var intervention = _data.default.intervention;
+  var findintervention = intervention.find(function (e) {
+    return e.id === interventionId;
   });
 
-  if (isNaN(redflagId)) {
+  if (isNaN(interventionId)) {
     return res.status(404).json({
       status: 404,
       error: "Path does not exist"
     });
   }
 
-  if (!redflagId) {
-    return res.status(404).json({
+  if (!interventionId) {
+    res.status(404).json({
       status: 404,
       error: "Record was not found"
     });
@@ -198,14 +198,14 @@ exports.updateRedflagStatus = function (req, res) {
   if (!req.body.status) {
     return res.status(404).json({
       status: 404,
-      error: "Status is required"
+      error: "status is required"
     });
   }
 
-  var index = redflag.indexOf(findRedflag);
+  var index = intervention.indexOf(findintervention);
   var day = new Date();
-  var updatedRedflag = {
-    id: redflagId,
+  var updatedintervention = {
+    id: interventionId,
     createdOn: day,
     createdBy: req.body.createdBy,
     type: req.body.type,
@@ -215,45 +215,45 @@ exports.updateRedflagStatus = function (req, res) {
     Videos: [],
     comment: req.body.comment
   };
-  redflag.splice(index, 1, updatedRedflag);
+  intervention.splice(index, 1, updatedintervention);
   return res.status(200).json({
     status: 200,
     data: [{
-      id: redflagId,
-      message: "Updated red-flag record's status"
+      id: interventionId,
+      message: "Updated Intervention record's status"
     }]
   });
 };
 
-exports.deleteRedflag = function (req, res) {
-  var redflagId = req.params.redflagId * 1;
-  var redflag = _data.default.redflag;
-  var findRedflag = redflag.find(function (e) {
-    return e.id === redflagId;
+exports.deleteIntervention = function (req, res) {
+  var interventionId = req.params.interventionId * 1;
+  var intervention = _data.default.intervention;
+  var findintervention = intervention.find(function (e) {
+    return e.id === interventionId;
   });
 
-  if (isNaN(redflagId)) {
+  if (isNaN(interventionId)) {
     return res.status(404).json({
       status: 404,
       error: "Path does not exist"
     });
   }
 
-  if (!findRedflag) {
+  if (!findintervention) {
     return res.status(404).json({
       status: 404,
       error: "Record was not found"
     });
   }
 
-  var newId = redflagId;
-  var index = redflag.indexOf(findRedflag);
-  redflag.splice(index, 1);
+  var newId = interventionId;
+  var index = intervention.indexOf(findintervention);
+  intervention.splice(index, 1);
   res.status(200).json({
     status: 200,
     data: [{
       id: newId,
-      message: "red-flag record has been deleted"
+      message: "Intervention record has been deleted"
     }]
   });
 };
