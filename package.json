@@ -45,7 +45,7 @@
     "nyc": "^13.1.0",
     "should": "^13.2.3",
     "should-http": "^0.1.1",
-    "supertest": "^3.3.0"
+    "supertest": "^4.0.2"
   },
   "engines": {
     "node": "v8.11.3"
